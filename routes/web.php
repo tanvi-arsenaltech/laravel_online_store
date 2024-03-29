@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\TempImageController;
@@ -59,6 +60,19 @@ Route::group(['prefix'=>'admin'],function(){
                 'update' => 'admin.subcategories.update',
                 'destroy' => 'admin.subcategories.delete',
                 'show' => 'admin.subcategories.show',
+            ]
+        ]);
+
+        //brand
+        Route::resource('brand', BrandController::class, [
+            'names' => [
+                'index' => 'admin.brand',
+                'create' => 'admin.brand.create',
+                'store' => 'admin.brand.store',
+                'edit' => 'admin.brand.edit',
+                'update' => 'admin.brand.update',
+                'destroy' => 'admin.brand.delete',
+                'show' => 'admin.brand.show',
             ]
         ]);
         //temp-images.create

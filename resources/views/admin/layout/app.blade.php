@@ -94,6 +94,7 @@
 				}
 			});
 		</script>
+		    @include('admin.layout.slug')
         @yield('js')
 	</body>
 </html>
