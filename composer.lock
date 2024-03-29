@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de9bbe912febcc4d52bea5bd480b1397",
+    "content-hash": "1e244d46074916fc6703d234591157de",
     "packages": [
         {
             "name": "brick/math",
@@ -1046,17 +1046,230 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v11.0.8",
+            "name": "intervention/gif",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "0379a7ccb77e2029c43ce508fa76e251a0d68fce"
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0379a7ccb77e2029c43ce508fa76e251a0d68fce",
-                "reference": "0379a7ccb77e2029c43ce508fa76e251a0d68fce",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Gif\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T17:23:47+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/67be90e5700370c88833190d4edc07e4bb7d157b",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.0.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/3.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-22T07:12:19+00:00"
+        },
+        {
+            "name": "intervention/image-laravel",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image-laravel.git",
+                "reference": "d30b62fea3c49896dbf26ea7799e7d718e779310"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image-laravel/zipball/d30b62fea3c49896dbf26ea7799e7d718e779310",
+                "reference": "d30b62fea3c49896dbf26ea7799e7d718e779310",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8|^9|^10|^11",
+                "intervention/image": "^3",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.18",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\Laravel\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Laravel\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\Laravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Laravel Integration of Intervention Image",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image-laravel/issues",
+                "source": "https://github.com/Intervention/image-laravel/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-03T09:14:35+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v11.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "4a9195f68b529b20fe01e24864f99991459c48d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4a9195f68b529b20fe01e24864f99991459c48d4",
+                "reference": "4a9195f68b529b20fe01e24864f99991459c48d4",
                 "shasum": ""
             },
             "require": {
@@ -1248,20 +1461,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-03-21T14:15:49+00:00"
+            "time": "2024-03-26T15:17:39+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.16",
+            "version": "v0.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "ca6872ab6aec3ab61db3a61f83a6caf764ec7781"
+                "reference": "8ee9f87f7f9eadcbe21e9e72cd4176b2f06cd5b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/ca6872ab6aec3ab61db3a61f83a6caf764ec7781",
-                "reference": "ca6872ab6aec3ab61db3a61f83a6caf764ec7781",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/8ee9f87f7f9eadcbe21e9e72cd4176b2f06cd5b5",
+                "reference": "8ee9f87f7f9eadcbe21e9e72cd4176b2f06cd5b5",
                 "shasum": ""
             },
             "require": {
@@ -1303,22 +1516,22 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.16"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.17"
             },
-            "time": "2024-02-21T19:25:27+00:00"
+            "time": "2024-03-13T16:05:43+00:00"
         },
         {
             "name": "laravel/sanctum",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "9e6e561308cace166de9ceae4ced820309fa8e13"
+                "reference": "d1de99bf8d31199aaf93881561622489ab91ba58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/9e6e561308cace166de9ceae4ced820309fa8e13",
-                "reference": "9e6e561308cace166de9ceae4ced820309fa8e13",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/d1de99bf8d31199aaf93881561622489ab91ba58",
+                "reference": "d1de99bf8d31199aaf93881561622489ab91ba58",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1540,8 @@
                 "illuminate/contracts": "^11.0",
                 "illuminate/database": "^11.0",
                 "illuminate/support": "^11.0",
-                "php": "^8.2"
+                "php": "^8.2",
+                "symfony/console": "^7.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.6",
@@ -1368,7 +1582,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2024-03-12T14:07:05+00:00"
+            "time": "2024-03-19T20:09:38+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -5934,17 +6148,67 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-            "name": "laravel/pint",
-            "version": "v1.14.0",
+            "name": "jason-guru/laravel-make-repository",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/pint.git",
-                "reference": "6b127276e3f263f7bb17d5077e9e0269e61b2a0e"
+                "url": "https://github.com/jason-guru/laravel-make-repository.git",
+                "reference": "693d3d189c0b19262a896eb888c3a7b870a2de43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/6b127276e3f263f7bb17d5077e9e0269e61b2a0e",
-                "reference": "6b127276e3f263f7bb17d5077e9e0269e61b2a0e",
+                "url": "https://api.github.com/repos/jason-guru/laravel-make-repository/zipball/693d3d189c0b19262a896eb888c3a7b870a2de43",
+                "reference": "693d3d189c0b19262a896eb888c3a7b870a2de43",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JasonGuru\\LaravelMakeRepository\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JasonGuru\\LaravelMakeRepository\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "G Jason Sharma",
+                    "email": "g.jason.sharma@gmail.com"
+                }
+            ],
+            "description": "A simple package to create a make:repository command for Laravel 5+",
+            "support": {
+                "issues": "https://github.com/jason-guru/laravel-make-repository/issues",
+                "source": "https://github.com/jason-guru/laravel-make-repository/tree/0.0.3"
+            },
+            "time": "2020-10-24T13:21:42+00:00"
+        },
+        {
+            "name": "laravel/pint",
+            "version": "v1.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "c52de679b3ac01207016c179d7ce173e4be128c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/c52de679b3ac01207016c179d7ce173e4be128c4",
+                "reference": "c52de679b3ac01207016c179d7ce173e4be128c4",
                 "shasum": ""
             },
             "require": {
@@ -5997,7 +6261,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2024-02-20T17:38:05+00:00"
+            "time": "2024-03-26T16:40:24+00:00"
         },
         {
             "name": "laravel/sail",

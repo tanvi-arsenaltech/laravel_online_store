@@ -7,12 +7,15 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "*",
+        "intervention/image-laravel": "*",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "jason-guru/laravel-make-repository": "^0.0.3",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",

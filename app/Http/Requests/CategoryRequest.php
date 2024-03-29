@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class CategoryRequest extends FormRequest
 {
@@ -19,13 +20,31 @@ class CategoryRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules(Request $request): array
     {
+        if($request->has('category_id'))
+        {
         return [
             'name' => 'required',
             'slug' => 'required',
             'status' => 'required',
-            // 'image' => 'image|nullable'
+        ];
+    }
+    else{
+        return [
+            'name' => 'required',
+            'slug' => 'required|unique:categories',
+            'status' => 'required',
+        ];
+    }
+    }
+    public function messages()
+    {
+        return [
+            'name' => 'name must be required',
+            'slug' => 'Slug must be required.',
+            'status' => 'status must be required.',
+            'image' => 'image must be required'
         ];
     }
 }

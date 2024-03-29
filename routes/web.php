@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\TempImageController;
+use App\Http\Controllers\SubcategoryController;
+use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +36,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard');
         Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
 
+
         //categories
         Route::resource('categories', CategoryController::class, [
             'names' => [
@@ -44,5 +49,32 @@ Route::group(['prefix'=>'admin'],function(){
                 'show' => 'admin.categories.show',
             ]
         ]);
+        //subcategory
+        Route::resource('subcategories', SubcategoryController::class, [
+            'names' => [
+                'index' => 'admin.subcategories',
+                'create' => 'admin.subcategories.create',
+                'store' => 'admin.subcategories.store',
+                'edit' => 'admin.subcategories.edit',
+                'update' => 'admin.subcategories.update',
+                'destroy' => 'admin.subcategories.delete',
+                'show' => 'admin.subcategories.show',
+            ]
+        ]);
+        //temp-images.create
+        Route::any('/upload-temp-image',[TempImageController::class,'create'])->name('temp-images.create');
+
+        Route::get('/getSlug',function(Request $request)
+        { 
+            $slug = '';
+            if(!empty($request->title))
+            {
+                $slug = Str::slug($request->title);
+            }
+            return response()->json([
+                'status' => true,
+                'slug' => $slug
+            ]);
+        })->name('getSlug');
     });
 });

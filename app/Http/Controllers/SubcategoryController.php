@@ -1,38 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\SubCategoryRequest;
 use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Repositories\CategoryRepository;
+use App\Models\SubCategory;
+use App\Repositories\SubCategoryRepository;
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CategoryController extends Controller
+class SubcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     /**
-     * @var categoryRepository
+     * @var SubCategoryRepository
      */
-    public $categoryRepository;
+    public $subCategoryRepository;
 
     /**
      * LotRepository constructor.
      */
     public function __construct()
     {
-        $this->categoryRepository = new CategoryRepository();
+        $this->subCategoryRepository = new SubCategoryRepository();
     }
 
     public function index(Request $request)
     {
         try {
-            $category = $this->categoryRepository->categoryList($request);
-            return view('admin.category.list', compact('category'));
+            $subCategories = $this->subCategoryRepository->subCategoryList($request);
+            return view('admin.subcategory.list', compact(['subCategories']));
         } catch (Exception $e) {
             Session::flash('error', $e->getmessage());
             return redirect()->back();
@@ -44,19 +44,18 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $categories = Category::orderBy('name', 'ASC')->get();
+        return view('admin.subcategory.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-
-    public function store(CategoryRequest $request)
+    public function store(SubCategoryRequest $request)
     {
-        // Create a new category using validated data
         try {
-            $this->categoryRepository->categoryCreate($request);
-            return redirect()->route('admin.categories')->with('success', 'Category created successfully.');
+            $this->subCategoryRepository->createSubCategory($request);
+            return redirect()->route('admin.subcategories')->with('success', 'SubCategory created successfully.');
         } catch (Exception $e) {
             Session::flash('error', $e->getmessage());
             return redirect()->back();
@@ -77,8 +76,10 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         try {
-            $category = Category::find($id);
-            return view('admin.category.create', compact('category'));
+            $data = $this->subCategoryRepository->editSubCategory($id);
+            $subCategories = $data['subCategories'];
+            $categories = $data['categories'];
+            return view('admin.subcategory.create', compact(['subCategories', 'categories']));
         } catch (Exception $e) {
             Session::flash('error', $e->getmessage());
             return redirect()->back();
@@ -88,11 +89,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CategoryRequest $request, string $id)
+    public function update(SubCategoryRequest $request, string $id)
     {
         try {
-            $this->categoryRepository->categoryUpdate($request, $id);
-            return redirect()->route('admin.categories')->with('success', 'Category updated successfully.');
+            $this->subCategoryRepository->updateSubCategory($request, $id);
+            return redirect()->route('admin.subcategories')->with('success', 'SubCategory updated successfully.');
         } catch (Exception $e) {
             Session::flash('error', $e->getmessage());
             return redirect()->back();
@@ -105,8 +106,8 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         try {
-            Category::destroy($id);
-            return redirect()->back()->with('success', 'Category deleted successfully.');
+            SubCategory::destroy($id);
+            return redirect()->back()->with('success', 'SubCategory deleted successfully.');
         } catch (Exception $e) {
             Session::flash('error', $e->getmessage());
             return redirect()->back();
