@@ -12,5 +12,4 @@ class TempImage extends Model
     protected $table = "temp_image";
     protected $guarded = [];
 
-
 }

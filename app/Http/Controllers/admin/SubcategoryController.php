@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Requests\SubCategoryRequest;
 use App\Models\Category;
@@ -9,6 +9,7 @@ use App\Repositories\SubCategoryRepository;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
 
 class SubcategoryController extends Controller
 {
@@ -112,5 +113,11 @@ class SubcategoryController extends Controller
             Session::flash('error', $e->getmessage());
             return redirect()->back();
         }
+    }
+
+    public function getSubcategories($category_id)
+    {
+        $subcategories = Subcategory::where('category_id', $category_id)->get();
+        return response()->json($subcategories);
     }
 }

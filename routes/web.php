@@ -5,8 +5,9 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\TempImageController;
-use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\admin\SubcategoryController;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use Illuminate\Support\Str;
@@ -37,6 +38,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard');
         Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
 
+        Route::get('/subcategories/{category_id}', [SubcategoryController::class,'getSubcategories'])->name('subcategories.get');
 
         //categories
         Route::resource('categories', CategoryController::class, [
@@ -73,6 +75,19 @@ Route::group(['prefix'=>'admin'],function(){
                 'update' => 'admin.brand.update',
                 'destroy' => 'admin.brand.delete',
                 'show' => 'admin.brand.show',
+            ]
+        ]);
+        
+        //product
+        Route::resource('product', ProductController::class, [
+            'names' => [
+                'index' => 'admin.product',
+                'create' => 'admin.product.create',
+                'store' => 'admin.product.store',
+                'edit' => 'admin.product.edit',
+                'update' => 'admin.product.update',
+                'destroy' => 'admin.product.delete',
+                'show' => 'admin.product.show',
             ]
         ]);
         //temp-images.create

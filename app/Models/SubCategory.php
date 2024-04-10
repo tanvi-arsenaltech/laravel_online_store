@@ -9,6 +9,7 @@ class SubCategory extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $primaryKey = 'id';
 
     public function category()
     {
